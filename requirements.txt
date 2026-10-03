@@ -10,3 +10,5 @@ langchain-community
 langgraph
 pypdf
 beautifulsoup4
+wikipedia
+langchain-text-splitters

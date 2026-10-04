@@ -5,3 +5,4 @@ __pycache__/
 .ipynb_checkpoints/
 data/medical_report.pdf
 certs/
+data/data_science_syllabus.pdf

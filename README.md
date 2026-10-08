@@ -281,6 +281,120 @@ Generated Answer
 
 ## LangGraph Fundamentals
 
+## LangGraph Q&A Chatbot with Memory
+
+**Files:**
+
+* `apps/6_langgraph_qna_bot.py`
+* `notebooks/17_langgraph_qna_bot.ipynb`
+
+### Problem
+
+A basic LLM application can answer individual questions, but it does not automatically provide a structured way to maintain conversation state across multiple interactions.
+
+### Solution
+
+Built a **stateful Q&A chatbot using LangGraph** that maintains conversation context through graph state and checkpoint-based memory.
+
+The application uses a LangGraph `StateGraph` to define the conversation workflow. A custom `ChatState` model stores the message history, while the `add_messages` reducer manages the addition of user and AI messages.
+
+The chatbot uses **GPT OSS 20B through Groq** to generate responses and `InMemorySaver` to maintain checkpointed conversation state.
+
+### Technologies
+
+**Python | LangGraph | LangChain | Groq | GPT OSS 20B | Pydantic | InMemorySaver**
+
+### Why these components?
+
+* **Pydantic `BaseModel`** - defines the structured `ChatState` used by the graph.
+* **`Annotated[list, add_messages]`** - manages and updates the conversation message history.
+* **LangGraph `StateGraph`** - defines the stateful chatbot workflow.
+* **ChatBot Node** - receives the current graph state and invokes the LLM.
+* **ChatGroq** - connects the application to the GPT OSS 20B model through Groq.
+* **`InMemorySaver`** - provides checkpoint-based memory for the graph.
+* **Thread ID** - identifies the conversation thread when invoking the graph.
+
+### Workflow
+
+```text
+User Question
+      |
+      v
+ChatState
+      |
+      v
+LangGraph StateGraph
+      |
+      v
+ChatBot Node
+      |
+      v
+GPT OSS 20B via Groq
+      |
+      v
+AI Response
+      |
+      v
+add_messages
+      |
+      v
+Checkpoint Memory
+      |
+      v
+Next Conversation Turn
+```
+
+### Graph Structure
+
+The chatbot uses a simple LangGraph workflow:
+
+```text
+START
+  |
+  v
+ChatBot Node
+  |
+  v
+END
+```
+
+The `ChatBot Node` receives the current conversation state, sends the messages to the LLM, and returns the updated state.
+
+### Key Concepts Learned
+
+* LangGraph `StateGraph`
+* Graph state management
+* Nodes and edges
+* `START` and `END`
+* Message reducers
+* `add_messages`
+* Stateful LLM applications
+* Conversation memory
+* Checkpointing with `InMemorySaver`
+* Thread-based conversation state
+* Integrating LLMs into LangGraph workflows
+
+### Learning Progression
+
+This project builds on the previous **LangGraph Fundamentals** project by moving from understanding basic graph structures to building a practical stateful chatbot.
+
+```text
+LangGraph Fundamentals
+          |
+          v
+StateGraph + Nodes + Edges
+          |
+          v
+Chat State + Message History
+          |
+          v
+Checkpoint Memory
+          |
+          v
+Stateful Q&A Chatbot
+```
+
+
 **File:** `notebooks/16_basic_langgraph.ipynb`
 
 Explored the fundamentals of **LangGraph** and graph-based workflows for building structured AI applications.

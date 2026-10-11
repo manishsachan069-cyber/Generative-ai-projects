@@ -424,6 +424,38 @@ This project builds on the fundamentals of LangGraph and individual AI agents, m
 This project extends the previous LangGraph projects by exploring how multiple specialized agents and tools can be used together to build more capable AI applications.
 
 
+## RAG Pipeline with LangGraph and Multiple Nodes
+
+**File:** `notebooks/19_rag_with_graph.ipynb`
+
+### Overview
+
+Built a Retrieval-Augmented Generation (RAG) question-answering system using LangGraph to organize the pipeline into multiple nodes.
+
+The project explores how a graph-based workflow can structure the steps involved in retrieving relevant information and generating answers grounded in retrieved context.
+
+### Key Concepts
+
+* Retrieval-Augmented Generation (RAG)
+* LangGraph `StateGraph`
+* Multi-node graph workflows
+* Graph state management
+* Document retrieval and context handling
+* LLM-powered question answering
+* Connecting retrieval and answer-generation steps
+
+### Technologies
+
+**Python | LangGraph | LangChain | RAG | LLMs**
+
+### Learning Progression
+
+This project builds on the earlier PDF-based RAG and LangGraph projects by combining retrieval-augmented question answering with a multi-node graph workflow.
+
+It represents another step toward building modular, maintainable GenAI applications using graph-based orchestration.
+
+
+
 
 
 **File:** `notebooks/16_basic_langgraph.ipynb`

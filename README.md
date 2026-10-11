@@ -395,6 +395,37 @@ Stateful Q&A Chatbot
 ```
 
 
+## Multi-AI Agentic System with LangGraph
+
+**File:** `notebooks/18_multi_ai_agent.ipynb`
+
+### Overview
+
+Built a multi-agent AI project exploring how specialized AI agents can use different tools to handle different types of tasks within a LangGraph-based workflow.
+
+This project builds on the fundamentals of LangGraph and individual AI agents, moving toward applications that combine multiple agents and tools.
+
+### Key Concepts
+
+* Multi-agent AI systems
+* LangGraph workflows
+* Creating specialized AI agents
+* Tool integration with LLMs
+* Google search integration using Serper
+* Custom tools using LangChain's `@tool` decorator
+* Building tool-enabled AI applications
+
+### Technologies
+
+**Python | LangGraph | LangChain | LLMs | AI Agents | Google Serper API**
+
+### Learning Progression
+
+This project extends the previous LangGraph projects by exploring how multiple specialized agents and tools can be used together to build more capable AI applications.
+
+
+
+
 **File:** `notebooks/16_basic_langgraph.ipynb`
 
 Explored the fundamentals of **LangGraph** and graph-based workflows for building structured AI applications.

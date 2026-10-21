@@ -6,3 +6,5 @@ __pycache__/
 data/medical_report.pdf
 certs/
 data/data_science_syllabus.pdf
+apps/doc_files/
+notebooks/vector_db/
